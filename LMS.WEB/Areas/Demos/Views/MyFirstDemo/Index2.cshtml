@@ -1,0 +1,33 @@
+﻿@{
+    //Map the layout page for this razor vuew engine tpo show the layout part
+    this.Layout = "~/Pages/Shared/_Layout.cshtml";
+
+    string author = "Shubham singh";
+
+}
+<h1>Index 2 Demo is here</h1>
+
+@* Server side comment: This comment will not appear or rendered on to the browser*@
+<!--Client Side Comment: Below line isshows C# code being embeded inside this html content-->
+
+<p>This page is designed by @author.ToUpper()</p>
+
+
+@* NOTE: The first character of the line of razor view page decides what the rest of thye line is.
+    The line can be treated as an HTML line or as C# line.
+*@
+<ul>
+    @for(int i=0; i< 10; i++)
+    {
+        <li>
+            @if(i % 2 == 0)
+            {
+                <b>Point #@(i + 1)</b>       @* example of c# in html *@
+            }
+            else
+            {
+                <span>Point #@(i + 1)</span>  @* example of html in c# *@
+            }
+        </li>
+    }
+</ul>
