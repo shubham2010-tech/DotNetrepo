@@ -1,0 +1,118 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@    
+<\head>
+<body>
+<section>
+
+   <div class="container">
+    <div class="desc" style="text-align:center">Setup Your Login Credentials</div>
+     <form name="myform" action="" onsubmit="return validation()" method="post" style="background-color:#F6F1F8;padding-top:2rem;padding-left:7rem">  
+       <span style="margin-left:7.3vw"></span>Full Name<sup style="color:rgb(255, 8, 8)"> * </sup>&nbsp;    
+        <input style="text-align:center; width: 25rem; margin-left: 3.5rem;" type="text" name="fname" id="fname"
+         placeholder=" Name" >&nbsp;&nbsp;&nbsp;<br><br>
+
+         <span style="margin-left:7.3vw"></span>Nick Name<sup style="color:rgb(255, 8, 8)"> * </sup> 
+         <input type="text" name="lname" id="lname" style="text-align:center; width: 25rem; margin-left: 3.5rem;" placeholder="Nick Name">
+         &nbsp;&nbsp;&nbsp;
+         <br><br>
+
+         <span style="margin-left:7.3vw"></span>Mobile Number
+       <sup style="color:rgb(255, 8, 8)"> * </sup> 
+       <input type="text" name="mobilenumber" id="mobilenumber" style="text-align:center; width: 25rem; margin-left: 1.1rem;" placeholder="10 Digit">&nbsp;&nbsp;&nbsp;
+       <br><br>
+
+          <span style="margin-left:7.3vw"></span>
+           E-mail<sup style="color:rgb(255, 8, 8)"> * </sup> 
+           <input type="text" style="text-align:center; width: 25rem; margin-left: 5.5rem;" name="email" id="email" placeholder="Email ID">&nbsp;&nbsp;&nbsp;<br><br>
+
+           <!-- password check  -->
+           <span style="margin-left:7.3vw"></span>Password<sup style="color:rgb(255, 8, 8)"> * </sup>
+           <input style="text-align:center; width: 25rem; margin-left: 4.1rem;" type="text" name="pass" 
+             id="pass"
+             placeholder="Password (Must Be 8 Digits)" >&nbsp;&nbsp;&nbsp;<br/><br/>
+
+         <span style="margin-left:7.3vw"></span>Confirm Password
+         <sup style="color:rgb(255, 8, 8)"> * </sup>
+         <input style="text-align:center; width: 25rem; margin-left: .2rem;" 
+         type="text" name="cpass" id="cpass" placeholder="Confirm Password" >&nbsp;&nbsp;&nbsp;<br/><br/>
+
+           <span style="margin-left:7.3vw"></span>
+         Employee Type<sup style="color:rgb(255, 8, 8)"> * </sup> 
+           <br><br>
+
+
+         <div style="display:flex;  justify-content:center; align-content:center;">
+         <input type="submit"  class="success btn btn-success" onsubmit ="validation();"
+          style="margin-bottom:10px ; margin-left:8px; font-weight: bold;"
+          value="Submit"></div>
+
+     </form>
+   </div>
+    </section>
+    <script>
+      function validation(){
+          var fname = document.forms.myform.fname;
+          var lname = document.forms.myform.lname;
+          var checkname=/^[A-Za-z]+$/;
+          var checknumber=/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+          var checkemail =/^\w+([\.-]?\w+)*\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+          var regularExpression = /^(?=.*[0-9])(?=.*[!#$%^&*])[a-zA-Z0-9!#$%^&*]{8}$/;
+          var email =  document.forms.myform.email;
+          let mnumber = document.forms.myform.mobilenumber;
+          var pass=document.forms.myform.pass;
+          var cpass=document.forms.myform.cpass;
+         /* var branch=document.forms.myform.querySelector('input[name=branch]:checked');*/
+         var branch = document.querySelector('input[name="branch"]:checked');
+
+          if(fname.value=="" || !checkname.test(fname.value) ){
+            alert("Kindly Check Your First Name");
+            fname.focus();
+            return false;
+          }        
+          /*else if(fname.value.match(checknumber)){
+            alert("Please Check Your First Name Column Again");
+            return false;
+          }  */       
+          if(lname.value=="" || !checkname.test(lname.value)){
+            alert("Kindly Check Your Last Name");
+            lname.focus();
+            return false;
+          }/*
+          else if(lname.value.match(checknumber)){
+            alert("Please Check Your Last Name Column Again");
+            return false;
+          }*/
+          if(mnumber.value==""|| !checknumber.test(mnumber.value)){
+            alert("Mobile Number Should be of 10 Digits");
+            mnumber.focus();
+            return false;
+          }
+          if(email.value=="" || !checkemail.test(email.value)){
+            alert("Kindly Check Your Mail ID");
+            email.focus();
+            return false;
+          }
+
+          if(pass.value.length != 8 && !regularExpression.test(pass.value)){
+            alert("Kindly Put a Strong Password(Must be 8 Digit Must Contain Alphabet and Numbers)");
+            pass.focus();
+            return false;
+          }
+          if(cpass.value==null||cpass.value==""){
+            alert("Empty Confirm Password");
+            cpass.focus();
+            return false;
+          }
+          if( cpass.value!=pass.value){
+            alert("Your confirm password is not matching");
+            return false;
+          }
+          if(branch == null){
+            alert("Kindly Select a Branch");   
+            return false;
+          }
+          return true;
+    }
+    </script>
+</body>

@@ -1,4 +1,4 @@
-using LMS.WEB.Data;
+using Asptasks.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LMS.WEB
+namespace Asptasks
 {
     public class Startup
     {
@@ -60,9 +60,9 @@ namespace LMS.WEB
 
                 endpoints.MapControllerRoute(
 
-                    name: "areas",
+                   name: "areas",
 
-                    pattern: "{area}/{controller}/{action=Index}/{id?}");
+                   pattern: "{area}/{controller}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
 

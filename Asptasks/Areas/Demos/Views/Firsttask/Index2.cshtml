@@ -1,0 +1,237 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    this.Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<h1 style="text-align:center;color:yellow;background-color:forestgreen;">Flipkart</h1>
+<h6 style="text-align:center;color:black">All You Need Is Here</h6>
+<img src="~/Images/flipkart-removebg-preview.png" style="width:10%"/>
+
+<h3 style="text-align:left">Explore Menu</h3>
+<head>
+    <style>table , th, td{border: 2px solid black}</style>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        nav{
+            background:red;
+            width:100%;
+            overflow:auto;
+        }
+        ul{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        li{
+            float:left;
+        }
+        nav a{
+            width:120px;
+            display:block;
+            text-decoration:none;
+            text-align:center;
+            background:red;
+            font-size:16px;
+            color:white;
+            padding:15px 7px;
+            font-family:Arial;
+        }
+        nav a:hover{
+            background:skyblue;
+            color:black;
+        }
+        .container{
+            max-width:1200px;
+            margin:auto;
+            background:#f2f2f2;
+            overflow:auto
+        }
+        .gallery{
+            margin:10px;
+            border:1px solid #ccc;
+            float:left;
+            width:380px;
+        }
+        .gallery img{
+            width:100%;
+            height:auto;
+        }
+        .desc{
+            padding:10px;
+            text-align:center;
+        }
+        footer{
+            padding:10px;
+            font-size:15px;
+            font-weight:bold;
+            text-align:center;
+            background:#594848;
+            color:white;
+            font-family:Arial;
+            letter-spacing:1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Wishlist</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Cart</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="gallery">
+            <img src="~/Images/cloth.jpg"/>
+            <div class="description">This is the cloth section</div>
+        </div>
+        <div class="gallery">
+            <img src="~/Images/footwear.jpg"/>
+            <div class="description">This is the Footwear section</div>
+        </div>
+        <div class="gallery">
+            <img src="~/Images/grocery.jpg"/>
+            <div class="description">This is the Grocery section</div>
+        </div>
+         <div class="gallery">
+            <img src="~/Images/utensils.jpg"/>
+            <div class="description">This is the Household section</div>
+        </div>
+        <div class="gallery">
+            <img src="~/Images/food.jpg"/>
+            <div class="description">This is the Household section</div>
+        </div>
+        <div class="gallery">
+            <img src="~/Images/DEcoratiion.jpg"/>
+            <div class="description">This is the Household section</div>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th style="background-color:yellow">Sr. no.</th>
+            <th style="background-color:yellow">Clothing</th>
+            <th style="background-color:yellow">Footwear</th>
+            <th style="background-color:yellow">Grocery</th>
+            <th style="background-color:yellow">Households</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Mens</td>
+            <td>Mens</td>
+            <td>Cereals</td>
+            <td>Inner</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Womens</td>
+            <td>Womens</td>
+            <td>oil</td>
+            <td>Outer</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Kids</td>
+            <td>Kids</td>
+            <td>Rice</td>
+            <td>Hard</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>SR. citizen</td>
+            <td>Sr. citizens</td>
+            <td>pulses</td>
+            <td>Soft</td>
+        </tr>
+    </table>
+
+
+     <footer>
+        ALL Rights Are Reserved To This Web Page Maker
+    </footer>
+    
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<section class="dropdown-menu-xl-right">
+    <div class="container">
+        <div class="box">
+            <h3 style="text-align:left">Explore Menu</h3>
+            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+            <a href="About Us" <i class="fas fa-arrow-right"></i>Men</a>
+            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+        </div>
+    </div>
+</section>*@

@@ -17,14 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Demos\Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="Areas\Books\Views\_ViewStart.cshtml">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+    <Folder Include="Areas\Demos\ViewModels\" />
+    <Folder Include="Areas\Products\ViewModels\" />
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
 </Project>
