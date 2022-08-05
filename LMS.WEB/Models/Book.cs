@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -24,12 +25,22 @@ namespace LMS.WEB.Models
         [DefaultValue(false)]
         virtual public bool IsEnabled { get; set; }
 
+        [StringLength(120)]
+
+        virtual public string ImageUrl { get; set; } = null;
+
         #region Navigation Properties to the Category Model
 
         virtual public int CategoryId { get; set; }
 
         [ForeignKey(nameof(Book.CategoryId))]
         public Category Category { get; set; }
+
+        #endregion
+
+        #region Navigation Properties to the Author Model
+
+        public ICollection<Author> Authors { get; set; }
 
         #endregion
     }

@@ -48,7 +48,19 @@ namespace LMS.WEB.Areas.Books.Controllers
                 return NotFound();
             }
 
-            return View(book);
+
+            var bookViewmodel = new BookViewModel
+            {
+                BookId = book.BookId,
+                BookTitle = book.BookTitle,
+                ImageUrl = book.ImageUrl,
+                IsEnabled = book.IsEnabled,
+                NumberOfCopies = book.NumberOfCopies,
+                CategoryId = book.CategoryId,
+                Category = book.Category
+            };
+
+            return View(bookViewmodel);
         }
 
         // GET: Books/Books/Create
@@ -63,7 +75,7 @@ namespace LMS.WEB.Areas.Books.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookId,BookTitle,NumberOfCopies,IsEnabled,CategoryId")] Book book)
+        public async Task<IActionResult> Create([Bind("BookId,BookTitle,NumberOfCopies,IsEnabled,CategoryId,ImageUrl")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -94,6 +106,7 @@ namespace LMS.WEB.Areas.Books.Controllers
             {
                 BookId = book.BookId,
                 BookTitle = book.BookTitle,
+                ImageUrl = book.ImageUrl,
                 IsEnabled = book.IsEnabled,
                 NumberOfCopies = book.NumberOfCopies,
                 CategoryId = book.CategoryId,
@@ -108,7 +121,7 @@ namespace LMS.WEB.Areas.Books.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BookId,BookTitle,NumberOfCopies,IsEnabled,CategoryId")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("BookId,BookTitle,NumberOfCopies,IsEnabled,CategoryId,ImageUrl")] Book book)
         {
             if (id != book.BookId)
             {
